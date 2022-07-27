@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Event{% endblock %}
+
+{% block body %}
+    
+    <div class="row gx-0">
+        <div class="col-md-8 offset-md-2 py-5">
+        <h1>{{ event.title }}</h1>
+            <table class="table">
+        <tbody>
+            <tr>
+                <th>Descriptif</th>
+                <td>{{ event.content }}</td>
+            </tr>
+            <tr>
+                <th>Début</th>
+                <td>{{ event.beginAt ? event.beginAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Fin</th>
+                <td>{{ event.endAt ? event.endAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Organisateur</th>
+                <td>{{ event.user }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_event_index') }}" class="btn btn-primary">Retour à la liste</a>
+    {% if app.user == event.user %}
+    <a href="{{ path('app_event_edit', {'id': event.id}) }}" class="btn btn-warning">Editer</a>
+    {{ include('event/_delete_form.html.twig') }}
+    {% endif %}
+        </div>
+    </div>
+    
+{% endblock %}

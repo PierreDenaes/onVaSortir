@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="profil-wrapper container-fluid p-0">
+    <h1 class="text-center py-5">Salut {{ user.name }} ! </h1>
+
+    <div class="row gx-0">
+        <div class="col-md-10 offset-md-1 py-2 overflow-auto">
+            <h2>Voici toutes les sorties</h2>
+
+    <table class="table bg-white d-block h-75 overflow-auto">
+        <thead>
+            <tr>
+                <th class="w-25">Titre</th>
+                <th class="w-50">Descriptif</th>
+                <th>Début</th>
+                <th>Fin</th>
+                <th>Organisateur</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for event in events %}
+            <tr>
+                <td class="w-25">{{ event.title }}</td>
+                <td class="w-50">{{ event.content }}</td>
+                <td>{{ event.beginAt ? event.beginAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ event.endAt ? event.endAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ event.user }}</td>
+                <td>
+                    <a href="{{ path('app_event_show', {'id': event.id}) }}" class="btn btn-primary">Voir</a>
+                    {% if app.user == event.user %}
+                    <a href="{{ path('app_event_edit', {'id': event.id}) }}" class="btn btn-warning mt-1">Editer</a>
+                    {% endif %}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+     <a href="{{ path('app_event_new') }}" class="btn btn-success">Créer une nouvelle sortie</a>   
+        </div>
+    </div>
+       
+</div>
+{% endblock %}

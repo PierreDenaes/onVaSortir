@@ -1,0 +1,38 @@
+
+{% block menu %}
+
+        <nav class="navbar navbar-expand-lg navbar-light  col-md-10 offset-md-1 col-sm-12 " id="navColor">
+            <a href="{{ path('app_home') }}" class="navbar-brand" aria-label="logo eniTinder">
+                <img class="nav-photo" src="{{ asset('images/logo.png') }}" alt="logo eniTinder">
+            </a>
+            <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon" aria-label="menu"></span>
+            </button>
+            <div class="collapse navbar-collapse text-center h6 mb-0" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item pt-md-3 pb-md-3">
+                        <a class="nav-link text-dark" href="{{ path('app_home') }}">Accueil</a>
+                    </li>
+                    {% if app.user %}
+                        <li class="nav-item pt-md-3 pb-md-3">
+                            <a class="nav-link text-dark" href="{{ path('profil') }}">Mon profil</a>
+                        </li>
+                        <li class="nav-item pt-md-3 pb-md-3">
+                           <a class="nav-link text-dark" aria-label="déconnexion" title="déconnexion" href="{{ path('app_logout') }}"><i class="fas fa-door-open fa-2x"></i></a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item pt-md-3 pb-md-3">
+                            <a class="nav-link text-dark" href="{{ path('app_register') }}">Inscription</a>
+                        </li>
+                        <li class="nav-item pt-md-3 pb-md-3">
+                            <a class="nav-link text-dark" href="{{ path('app_login') }}">Connexion</a>
+                        </li>
+                    {% endif %}
+
+                </ul>
+              
+            </div>
+        </nav>
+
+{% endblock %}
+

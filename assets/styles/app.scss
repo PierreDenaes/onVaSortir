@@ -1,0 +1,15 @@
+body {
+    background-color: lightgray;
+}
+
+.nav-photo {
+    width: 60px;
+}
+.profil-wrapper{
+    background-image: url("../img/explore-tinder-.jpg");
+    min-height: 80vh;
+    height: auto;
+    background-size: cover;
+}
+
+@import "~bootstrap/scss/bootstrap";

@@ -1,0 +1,13 @@
+{{ form_start(form) }}
+    {{ form_row(form.title) }}
+    {{ form_row(form.content) }}
+    {{ form_row(form.beginAt) }}
+    {{ form_row(form.endAt) }}
+    {{ form_row(form.campus) }}
+    {{ form_row(form.place) }}
+    {{ form_row(form.user, {
+        'label': false,
+        'attr': {'hidden': 'hidden'}
+    }) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
