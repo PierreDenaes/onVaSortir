@@ -19,6 +19,7 @@ class EventType extends AbstractType
             ->add('campus')
             ->add('place')
             ->add('user')
+            ->add('isActive')
         ;
     }
 

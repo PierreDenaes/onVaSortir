@@ -9,11 +9,11 @@
 </style>
 
 <div class="profil-wrapper container-fluid p-0">
-    <h1 class="text-center py-5">Salut {{ user.name }} ! </h1>
+    <h1 class="text-center text-white pt-5 pb-2">Bonjour {{ user.name }} ! </h1>
 
     <div class="row gx-0">
-        <div class="col-md-10 offset-md-1 py-2 overflow-auto">
-            <h2>Voici toutes les sorties</h2>
+        <div class="col-md-10 offset-md-1 py-2">
+            <h2 class="text-white">Voici toutes les sorties</h2>
 
     <table class="table bg-white d-block h-75 overflow-auto">
         <thead>
@@ -48,7 +48,8 @@
         {% endfor %}
         </tbody>
     </table>
-     <a href="{{ path('app_event_new') }}" class="btn btn-success">Créer une nouvelle sortie</a>   
+     <a href="{{ path('app_event_new') }}" class="btn btn-success">Créer une nouvelle sortie</a>  
+     <a href="{{ path('app_event_index') }}" class="btn btn-primary">Voir mes sorties</a>   
         </div>
     </div>
        

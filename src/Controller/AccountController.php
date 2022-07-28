@@ -40,6 +40,7 @@ class AccountController extends AbstractController
         $user = $this->getUser();
         $event = new Event();
         $event->setUser($user);
+        $event->setIsActive(0);
         $form = $this->createForm(EventType::class, $event);
         $form->handleRequest($request);
 

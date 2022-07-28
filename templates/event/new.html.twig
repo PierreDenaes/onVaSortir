@@ -3,15 +3,14 @@
 {% block title %}Nouvelle sortie{% endblock %}
 
 {% block body %} 
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-        <h1>Créer une nouvelle sortie</h1>
+<div class="profil-wrapper container-fluid p-0">
+    <div class="row gx-0">
+        <div class="col-md-6 offset-md-3 pt-5">
+        <h1 class="text-white">Créer une nouvelle sortie</h1>
             {{ include('event/_form.html.twig') }}
-            <a href="{{ path('app_event_index') }}">Retour à la liste</a>
+            <a href="{{ path('app_event_index') }}" class="btn btn-primary">Retour à la liste</a>
         </div>
     </div>
-
-    
-
-    
+</div>
+ 
 {% endblock %}

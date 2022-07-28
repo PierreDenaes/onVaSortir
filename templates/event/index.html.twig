@@ -3,18 +3,18 @@
 {% block title %}Event index{% endblock %}
 
 {% block body %}
-
-    <div class="row gx-0">
+    <div class="profil-wrapper container-fluid p-0">
+        <div class="row gx-0">
         <div class="col-md-10 offset-md-1 py-5">
-             <h1>Les Sorties dont je suis l'organisateur</h1>
+             <h1 class="pb-5 text-white">Les Sorties dont je suis l'organisateur</h1>
 
-    <table class="table">
+    <table class="table bg-white d-block h-75 overflow-auto">
         <thead>
             <tr>
-                <th>Title</th>
-                <th>Content</th>
-                <th>BeginAt</th>
-                <th>EndAt</th>
+                <th>Titre</th>
+                <th>Déscriptif</th>
+                <th>Début</th>
+                <th>Fin</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -42,5 +42,5 @@
         
         </div>
     </div>
-   
+    </div>
 {% endblock %}

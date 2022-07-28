@@ -9,5 +9,9 @@
         'label': false,
         'attr': {'hidden': 'hidden'}
     }) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    {{ form_row(form.isActive, {
+        'label': false,
+        'attr': {'hidden': 'hidden'}
+    }) }}
+    <button class="btn btn-success">{{ button_label|default('Enregistrer') }}</button>
 {{ form_end(form) }}
