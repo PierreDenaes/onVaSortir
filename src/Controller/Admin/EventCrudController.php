@@ -8,6 +8,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 
 class EventCrudController extends AbstractCrudController
 {
@@ -21,10 +23,11 @@ class EventCrudController extends AbstractCrudController
     {
         yield AssociationField::new('user');
         yield TextField::new('title');
-        yield TextField::new('content');
+        yield TextEditorField::new('content');
         yield AssociationField::new('campus');
-        yield DateField::new('beginAt');
-        yield DateField::new('endAt');
+        yield DateTimeField::new('beginAt');
+        yield DateTimeField::new('endAt');
+        yield AssociationField::new('place');
         yield BooleanField::new('isActive');
     }
     
