@@ -6,6 +6,7 @@ use App\Entity\Event;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 
 class EventCrudController extends AbstractCrudController
@@ -18,11 +19,13 @@ class EventCrudController extends AbstractCrudController
     
     public function configureFields(string $pageName): iterable
     {
+        yield AssociationField::new('user');
         yield TextField::new('title');
         yield TextField::new('content');
         yield AssociationField::new('campus');
         yield DateField::new('beginAt');
         yield DateField::new('endAt');
+        yield BooleanField::new('isActive');
     }
     
 }
