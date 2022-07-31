@@ -33,7 +33,7 @@
                 <td class="w-50">{{ event.content }}</td>
                 <td>{{ event.beginAt ? event.beginAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ event.endAt ? event.endAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ event.user }}</td>
+                <td>{{ event.user.email }}</td>
                 <td>
                     <a href="{{ path('app_event_show', {'id': event.id}) }}" class="btn btn-primary">Voir</a>
                     {% if app.user == event.user %}

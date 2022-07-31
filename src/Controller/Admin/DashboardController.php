@@ -2,10 +2,11 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\User;
 use App\Entity\Event;
 use App\Entity\Place;
 use App\Entity\Campus;
-use App\Controller\Admin\CampusCrudController;
+use App\Controller\Admin\EventCrudController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -50,6 +51,7 @@ class DashboardController extends AbstractDashboardController
             MenuItem::linkToCrud('Campus', 'fa fa-comment', Campus::class),
             MenuItem::linkToCrud('Event', 'fa fa-comment', Event::class),
             MenuItem::linkToCrud('Place', 'fa fa-comment', Place::class),
+            MenuItem::linkToCrud('User', 'fa fa-comment', User::class),
            
         ];
     }
