@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Event;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class EventType extends AbstractType
@@ -13,6 +14,12 @@ class EventType extends AbstractType
     {
         $builder
             ->add('title')
+            ->add('imageFile', VichImageType::class, [
+                'required' => false,
+                'allow_delete' => true,
+                'download_uri' => true,
+                'image_uri' => true,
+            ])
             ->add('content')
             ->add('beginAt')
             ->add('endAt')

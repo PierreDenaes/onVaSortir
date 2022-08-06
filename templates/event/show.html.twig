@@ -7,8 +7,12 @@
         <div class="row gx-0">
         <div class="col-md-8 offset-md-2 py-5">
         <h1>{{ event.title }}</h1>
-            <table class="table">
+            <table class="table bg-white">
         <tbody>
+            <tr>
+                <th>images</th>
+                <td class="text-center"><img style="width:300px;"src="{{ asset('images/soiree/')}}{{ event.imageName }}" alt="{{ event.title }}"></td>
+            </tr>
             <tr>
                 <th>Descriptif</th>
                 <td>{{ event.content }}</td>

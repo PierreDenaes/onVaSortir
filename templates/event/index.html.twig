@@ -12,6 +12,7 @@
         <thead>
             <tr>
                 <th>Titre</th>
+                <th>Image</th>
                 <th>Déscriptif</th>
                 <th>Début</th>
                 <th>Fin</th>
@@ -22,6 +23,7 @@
         {% for event in events %}
             <tr>
                 <td>{{ event.title }}</td>
+                <td><img style="width:60px;"src="{{ asset('images/soiree/')}}{{ event.imageName }}" alt="{{ event.title }}"></td>
                 <td>{{ event.content }}</td>
                 <td>{{ event.beginAt ? event.beginAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ event.endAt ? event.endAt|date('Y-m-d H:i:s') : '' }}</td>
