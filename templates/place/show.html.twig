@@ -1,34 +1,38 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Place{% endblock %}
+{% block title %}Lieu{% endblock %}
 
 {% block body %}
-    <h1>Place</h1>
+<div class="profil-wrapper container-fluid p-0">
+    <h1 class="text-center text-white pt-5 pb-2">lieu</h1>
+    <div class="row gx-0">
+        <div class="col-md-10 offset-md-1 py-2">
+            <table class="table bg-white">
+                <tbody>
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ place.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Ville</th>
+                        <td>{{ place.city }}</td>
+                    </tr>
+                    <tr>
+                        <th>Adresse</th>
+                        <td>{{ place.adress }}</td>
+                    </tr>
+                    <tr>
+                        <th>Code Postal</th>
+                        <td>{{ place.zipCode }}</td>
+                    </tr>
+                </tbody>
+            </table>
+    <a href="{{ path('app_place_index') }}" class="btn btn-primary">Retour à la liste</a>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ place.id }}</td>
-            </tr>
-            <tr>
-                <th>City</th>
-                <td>{{ place.city }}</td>
-            </tr>
-            <tr>
-                <th>Adress</th>
-                <td>{{ place.adress }}</td>
-            </tr>
-            <tr>
-                <th>ZipCode</th>
-                <td>{{ place.zipCode }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <a href="{{ path('app_place_index') }}">back to list</a>
-
-    <a href="{{ path('app_place_edit', {'id': place.id}) }}">edit</a>
+    <a href="{{ path('app_place_edit', {'id': place.id}) }}" class="btn btn-warning">Modifier</a>
 
     {{ include('place/_delete_form.html.twig') }}
+        </div>
+    </div>
+</div>
 {% endblock %}

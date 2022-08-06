@@ -1,39 +1,39 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Place index{% endblock %}
+{% block title %}Liste des lieux{% endblock %}
 
 {% block body %}
-    <h1>Place index</h1>
+    <h1>Liste des lieux</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>City</th>
-                <th>Adress</th>
-                <th>ZipCode</th>
+                
+                <th>Ville</th>
+                <th>Adresse</th>
+                <th>Code postal</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for place in places %}
             <tr>
-                <td>{{ place.id }}</td>
+                
                 <td>{{ place.city }}</td>
                 <td>{{ place.adress }}</td>
                 <td>{{ place.zipCode }}</td>
                 <td>
-                    <a href="{{ path('app_place_show', {'id': place.id}) }}">show</a>
-                    <a href="{{ path('app_place_edit', {'id': place.id}) }}">edit</a>
+                    <a href="{{ path('app_place_show', {'id': place.id}) }}" class="btn btn-primary">Voir</a>
+                    <a href="{{ path('app_place_edit', {'id': place.id}) }}" class="btn btn-warning">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">Aucun lieux trouvés</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_place_new') }}">Create new</a>
+    <a href="{{ path('app_place_new') }}" class="btn btn-success">Créer un nouveau lieu</a>
 {% endblock %}
